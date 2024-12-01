@@ -1,0 +1,188 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #80a08c;
+    display: flex;
+}
+
+header {
+    background-color: #413801;
+    color: white;
+    text-align: center;
+    border-radius: 8px; /* Adjust the value for more or less rounded corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    top: 1em; /* 10px + 200px */
+    
+    padding: 10px; /* Padding to ensure 10px larger on all sides */
+    position: absolute;
+    left: 10.5%;
+}
+
+nav {
+    background-color: #41012a;
+    
+    width: 10%;
+    height: 100%;
+    padding-top: 1em;
+    position: fixed;
+}
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 0 0 10px; /* Added 5px padding on the left */
+
+    }
+
+        nav ul li {
+            width: 100%;
+
+        }
+
+            nav ul li button {
+                display: block;
+                color: white;
+                font-size: 16px;
+                text-align: left;
+                padding: 14px 18px;
+                text-decoration: none;
+                background-color: #413801;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                border-top-left-radius: 8px; /* Rounded top left corner */
+                border-bottom-left-radius: 8px; /* Rounded bottom left corner */
+                outline-width: 1px;
+                outline-style: solid;
+                outline-color: #ffffff;
+            }
+
+                nav ul li button:hover {
+                    background-color: #111;
+                }
+
+.dropdown-content {
+    display: none;
+    background-color: #4d4302;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: relative;
+    margin-top: 5px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: #ffffff;
+    font-size: 12px;
+}
+
+    .dropdown-content li {
+        float: none;
+        color: black;
+        padding: 5px 1px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+
+        .dropdown-content li a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+            .dropdown-content li a:hover {
+                background-color: #ddd;
+            }
+
+nav ul li {
+    margin-bottom: 5px;
+
+}
+main {
+    padding: 2em;
+    background-color: #014118;
+    border-radius: 8px;
+/*    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10.5%;
+    margin-top: 130px;
+    margin-right: 5px;
+    width: 90%;
+    height: 100%;
+    /*margin-left: 210px;*/ /* Adjust this value if you change the width of the nav */
+    /*margin-right: 10px;
+    margin-top: 120px;*/ /* Adjust this value to be below the header */
+    /*padding: 2em;
+    background-color: #014118;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    top: 80px;*/ /* Adjust this value to be below the header */
+    /*width: 85%;
+    height: calc(90%-20px);*/
+}
+
+.sister {
+    text-align: center;
+    margin-bottom: 2em;
+    color: white;
+}
+
+    .sister h2 {
+        margin-top: 0;
+        width: 45%;
+        margin-left: 26%;
+    }
+
+    .sister img {
+        display: block;
+        margin: 0 auto 1em auto; /* Center horizontally and add bottom margin */
+        max-width: 100%;
+        height: 450px;
+    }
+
+    .sister p {
+        margin-bottom: 1em;
+    }
+
+.sisters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.sister {
+    text-align: center;
+    width: 45%;
+}
+
+header {
+    cursor: pointer;
+}
+
+.citation {
+    font-style: normal;
+    font-size: 0.8em;
+    text-align: left;
+    margin-top: 1em;
+    color: white;
+
+}
+ h1 {
+    color: white;
+}
+ h3 {
+     color: white;
+     font-size: 15px;
+     text-decoration: underline;
+     text-decoration-thickness: 1px;
+ }
+ p {
+    color: white;
+    font-size: 15px;}

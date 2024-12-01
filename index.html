@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Peabody Sisters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header onclick="showMainContent()">
+        <h1>The Peabody Sisters</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <button onclick="toggleDropdown('elizabethSources')">Elizabeth</button>
+                <ul id="elizabethSources" class="dropdown-content">
+                    <li><a href="sources/Elizabeth/Guide_to_the_Kindergarten_and_Intermedia.pdf" target="_blank">Moral Culture of Infancy, and Kindergarten Guide</a></li>
+                    <li><a href="https://doi.org/10.2307/361283" target="_blank">Horace Mann and the Peabody Sisters</a></li>
+                    <li><a href="https://doi.org/10.2307/361834" target="_blank">Elizabeth Peabody and the Temple School</a></li>
+                    <li><a href="http://www.jstor.org/stable/25081202" target="_blank">Elizabeth Palmer Peabody: The First Transcendentalist?</a></li>
+                </ul>
+            </li>
+            <li>
+                <button onclick="toggleDropdown('marySources')">Mary</button>
+                <ul id="marySources" class="dropdown-content">
+                    <li><a href="sources/Elizabeth/Guide_to_the_Kindergarten_and_Intermedia.pdf" target="_blank">Moral Culture of Infancy, and Kindergarten Guide</a></li>
+                    <li><a href="https://doi.org/10.2307/361283" target="_blank">Horace Mann and the Peabody Sisters</a></li>
+                    <li><a href="https://doi.org/10.5224/masshistrevi.18.1.0213" target="_blank">The Lessons of Spain: New England Intellectuals and the History of the Hispanic World</a></li>
+                    <li><a href="https://doi.org/10.2307/369009" target="_blank">The Trouble with Coeducation: Mann and Women at Antioch, 1853-1860</a></li>
+                    <li><a href="sources/Mary/Luiggi-LettersSarmientoMary-1952 Part I.pdf" target="_blank">Some Letters of Sarmiento and Mary Mann 1865-1876, Part I</a></li>
+                    <li><a href="sources/Mary/Luiggi-LettersSarmientoMary-1952 Part II.pdf" target="_blank">Some Letters of Sarmiento and Mary Mann 1865-1876, Part II</a></li>
+                    <li><a href="sources/Mary/Life and Works of Horace Mann Vol 1.pdf" target="_blank">Life and Works of Horace Mann Vol 1</a></li>
+                    <li><a href="sources/Mary/Life and Works of Horace Mann Vol 2.pdf" target="_blank">Life and Works of Horace Mann Vol 2</a></li>
+                    <li><a href="sources/Mary/Life and Works of Horace Mann Vol 3.pdf" target="_blank">Life and Works of Horace Mann Vol 3</a></li>
+                    <li><a href="sources/Mary/Life and Works of Horace Mann Vol 4.pdf" target="_blank">Life and Works of Horace Mann Vol 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <button onclick="loadSources()">View All Sources</button>
+            </li>
+            <li>
+                <button onclick="loadDisc()">Legal Disclaimer</button>
+            </li>
+        </ul>
+    </nav>
+    <main id="mainContent">
+        <div class="sisters-container">
+            <section class="sister">
+                <h2>Elizabeth Palmer Peadbody</h2>
+                <img src="images/Elizabeth_Peabody.png" alt="Elizabeth">
+                <p>
+                    Elizabeth Peabody was born on May 16th 1804 in Billerica, Massachusetts.
+                    She was an ardent education reformer who would go on to open the first
+                    English-Language kindergarten in the United States. She became friends
+                    with educational reformer Horace Mann who would later marry her sister Mary.
+                </p>
+            </section>
+            <section class="sister">
+                <h2>Mary Tyler Mann</h2>
+                <img src="images/Mary_Mann.png" alt="Mary">
+                <p>
+                    Mary Mann (born Mary Tyler Peabody) was born on November 16, 1806 in Cambridge Massachusetts. She was an abolitionist and an education reformer who worked closely with her sister and her husband, Horace Mann, and would go on to write Horace’s biography Life and Works of Horace Mann.
+                </p>
+            </section>
+        </div>
+        <h3>Purpose</h3>
+        <p>
+            The 19th century was a time of dramatic change in regards to education in
+            America, and a key contributor to common school reformation was Horace Mann.
+            Horace’s wife, Mary Mann, and her sister, Elizabeth Peabody, were
+            also education reformers who specialized in the education of young children.
+            To ensure the Peabody sisters are not underrepresented in the conversation surrounding
+            common school reformation during their time, the goal of this website is to serve as a
+            compilation of works related their legacy.
+        </p>
+    </main>
+    <script>
+        function toggleDropdown(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+
+        function loadDisc() {
+            fetch('Disclaimer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('mainContent').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sources:', error));
+        }
+        function loadSources() {
+            fetch('sources.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('mainContent').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sources:', error));
+        }
+
+        function showMainContent() {
+            document.getElementById('mainContent').innerHTML = `
+                        <div class="sisters-container">
+                            <section class="sister">
+                                <h2>Elizabeth Palmer Peadbody</h2>
+                                <img src="images/Elizabeth_Peabody.png" alt="Elizabeth">
+                                <p>
+                                    Elzabeth Peabody was born on May 16th 1804 in Billerica, Massachusetts.
+                                    She was an ardent education reformer who would go on to open the first
+                                    English-Language kindergarten in the United States. She became friends
+                                    with educational reformer Horace Mann who would later marry her sister Mary.
+                                </p>
+                            </section>
+                            <section class="sister">
+                                <h2>Mary Tyler Mann</h2>
+                                <img src="images/Mary_Mann.png" alt="Mary">
+                                <p>
+                                    Mary Mann (born Mary Tyler Peabody) was born on November 16, 1806 in Cambridge Massachusetts. She was an abolitionist and an education reformer who worked closely with her sister and her husband, Horace Mann, and would go on to write Horace’s biography Life and Works of Horace Mann.
+                                </p>
+                            </section>
+                        </div>
+                        <h3>Purpose</h3>
+                        <p>
+                            The 19th century was a time of dramatic change in regards to education in
+                            America, and a key contributor to common school reformation was Horace Mann.
+                            Horace’s wife, Mary Mann, and her sister, Elizabeth Peabody, were
+                            also education reformers who specialized in the education of young children.
+                            To ensure the Peabody sisters are not underrepresented in the conversation surrounding
+                            common school reformation during their time, the goal of this website is to serve as a
+                            compilation of works related their legacy.
+                        </p>
+                    `;
+        }
+    </script>
+</body>
+</html>
+
